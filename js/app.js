@@ -192,9 +192,9 @@ $(document).ready(function() {
     if (pane.data("lastUpdate")) {
       var timeBetweenUpdates = now - pane.data("lastUpdate");
       // $("span.update-interval", pane).text((timeBetweenUpdates / 1000) + "sec");
-      $(".stat-indicator").removeClass("wait");
+      $(".stat-indicator", pane).removeClass("wait");
       setTimeout(function() {
-        $(".stat-indicator").addClass("wait");
+        $(".stat-indicator", pane).addClass("wait");
       }, 1500);
     }
     

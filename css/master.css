@@ -240,6 +240,41 @@ section.monitor section.meters canvas {
 /*  margin-bottom: 0.2%;*/
 }
 
+section.monitor section.meters span {
+  position: absolute;
+  
+  background: rgba(0,0,0,0.6);
+  
+  color: rgba(255,255,255,0.8);
+
+  margin: 6px;
+  
+  font-size: 0.6em;
+  
+  border-radius: 15px;
+  
+  padding: 4px 8px;
+}
+
+section.monitor section.meters span:nth-child(0) {
+  top: 0;
+}
+
+section.monitor section.meters span:nth-child(1) {
+  top: 25%;
+  margin-top: 8px;
+}
+
+section.monitor section.meters span:nth-child(2) {
+  top: 50%;
+  margin-top: 10px;
+}
+
+section.monitor section.meters span:nth-child(3) {
+  top: 75%;
+  margin-top: 12px;
+}
+
 section.monitor section.meters ul {
   
   list-style: none;

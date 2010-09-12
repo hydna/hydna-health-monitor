@@ -22,6 +22,15 @@ $(document).ready(function() {
       verticalSections: 4 
     }
   };
+  var PARAMS_NAMES = {
+    "outmsgs": "Outgoing messages per sec",
+    "inmsgs": "Ingoing messages per sec",
+    "connects": "Connects per sec",
+    "disconnects": "Disconnects per sec",
+    "conns": "Current connections",
+    "cpu": "CPU usage"
+  }
+  
   var panes = [];
 
   hydna.onconnect = function() {
@@ -181,7 +190,6 @@ $(document).ready(function() {
     
     if (pane.data("lastUpdate")) {
       var timeBetweenUpdates = now - pane.data("lastUpdate");
-      console.log(timeBetweenUpdates);
       $("span.update-interval", pane).text((timeBetweenUpdates / 1000) + "sec");
     }
     
@@ -203,8 +211,11 @@ $(document).ready(function() {
     var workerSeries = pane.data("series");
     var chart = null;
     var canvas = $("canvas", pane).eq(index);
+    var span = $(".meters span", pane).eq(index - 1);
     
     opts.title = name.toUpperCase();
+    span.text(PARAMS_NAMES[name] || name);
+
     chart = new SmoothieChart(opts);
     
     if (canvas.data("chart")) {
@@ -222,12 +233,13 @@ $(document).ready(function() {
 
       chart.addTimeSeries(series, { 
         strokeStyle: 'rgba(' + COLORS[colorKeys[colorIndex]] + ', 0.8)', 
-        fillStyle: 'rgba(' + COLORS[colorKeys[colorIndex]] + ', 0.05)', 
-        lineWidth: 1 
+        fillStyle: 'rgba(' + COLORS[colorKeys[colorIndex]] + ', 0.00)', 
+        lineWidth: 3 
       });
     }
     
-    chart.streamTo(canvas[0], pane.data("statsInterval") / 2);
+    // chart.streamTo(canvas[0], );
+    chart.streamTo(canvas[0], pane.data("statsInterval") * 2);
   }
   
   function initPane(pane, values) {

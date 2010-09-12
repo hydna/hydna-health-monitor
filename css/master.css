@@ -148,6 +148,38 @@ section.monitor.mid {
   border-right: 2px solid black;  
 }
 
+section.monitor section.info .stat-indicator {
+
+  position: absolute;
+  
+  left: 6px;
+  top: 6px;
+  
+  width: 9px;
+  height: 9px;
+  
+  border-left: 1px solid rgba(0,0,0,0.6);
+  border-top: 1px solid rgba(0,0,0,0.6);
+/*  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+*/  
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00CC00), to(#007700));
+  
+  border-radius: 6px;
+}
+
+section.monitor section.info .stat-indicator.wait {
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCCC00), to(#777700));
+
+}
+
+section.monitor section.info .stat-indicator.error {
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CC0000), to(#770000));
+
+}
+
 section.monitor section.info {
   position: absolute;
   
@@ -243,9 +275,9 @@ section.monitor section.meters canvas {
 section.monitor section.meters span {
   position: absolute;
   
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.3);
   
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.6);
 
   margin: 6px;
   
@@ -256,21 +288,21 @@ section.monitor section.meters span {
   padding: 4px 8px;
 }
 
-section.monitor section.meters span:nth-child(0) {
+section.monitor section.meters span:nth-child(1) {
   top: 0;
 }
 
-section.monitor section.meters span:nth-child(1) {
+section.monitor section.meters span:nth-child(2) {
   top: 25%;
   margin-top: 8px;
 }
 
-section.monitor section.meters span:nth-child(2) {
+section.monitor section.meters span:nth-child(3) {
   top: 50%;
   margin-top: 10px;
 }
 
-section.monitor section.meters span:nth-child(3) {
+section.monitor section.meters span:nth-child(4) {
   top: 75%;
   margin-top: 12px;
 }

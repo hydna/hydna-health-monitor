@@ -14,6 +14,7 @@ $(document).ready(function() {
   var TIMELINE_OPTIONS = {
     fps: 10,
     title: "",
+    maxValueScale: 2,
     grid: {
       fillStyle:'rgba(0,0,0,1)', 
       strokeStyle: 'rgba(0,0,0,0.08)', 
@@ -47,7 +48,7 @@ $(document).ready(function() {
     var parent = self.parent("ul");
     var pane = parent.parent("section");
     var canvasIndex = parent.data("canvasIndex");
-    var name = self.text();
+    var name = self.attr("rel");
     
     event.preventDefault();
     
@@ -190,7 +191,11 @@ $(document).ready(function() {
     
     if (pane.data("lastUpdate")) {
       var timeBetweenUpdates = now - pane.data("lastUpdate");
-      $("span.update-interval", pane).text((timeBetweenUpdates / 1000) + "sec");
+      // $("span.update-interval", pane).text((timeBetweenUpdates / 1000) + "sec");
+      $(".stat-indicator").removeClass("wait");
+      setTimeout(function() {
+        $(".stat-indicator").addClass("wait");
+      }, 1500);
     }
     
     pane.data("lastUpdate", now);
@@ -211,7 +216,7 @@ $(document).ready(function() {
     var workerSeries = pane.data("series");
     var chart = null;
     var canvas = $("canvas", pane).eq(index);
-    var span = $(".meters span", pane).eq(index - 1);
+    var span = $(".meters span", pane).eq(index);
     
     opts.title = name.toUpperCase();
     span.text(PARAMS_NAMES[name] || name);
@@ -276,7 +281,9 @@ $(document).ready(function() {
     var selectmenu = ['<ul class="series-menu">'];
     
     names.forEach(function(name) {
-      selectmenu.push('<li>' + name + '</li>')
+      selectmenu.push('<li rel="' + name + '">' + 
+                      (PARAMS_NAMES[name] || name) + 
+                      '</li>')
     });
     
     selectmenu.push('</ul>');

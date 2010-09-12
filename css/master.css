@@ -1,0 +1,413 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  
+  background: #191919;
+  
+  overflow: hidden;
+  
+  font-family: Helvetica, Arial;
+}
+
+.tmpl {
+  display: none;
+}
+
+content {
+  position: absolute;
+  
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  bottom: 40px;
+  
+  padding: 0;
+  margin: 0;
+  
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#444444), to(#252525));
+  
+  border-radius: 7px;
+  
+  border: 1px solid #191919;
+  
+  -webkit-box-shadow: 1px 1px 5px #191919; padding: 2px 2px 2px 2px;
+}
+
+section.monitor {
+  position: absolute;
+  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  padding: 0;
+  margin: 0;
+}
+
+section.monitor.connecting section.status-updates,
+section.monitor.connecting section.info,
+section.monitor.connecting ul.legend,
+section.monitor.connecting section.meters,
+section.monitor.connecting section.server-select {
+  display: none;  
+}
+
+section.monitor.server-select section.status-updates,
+section.monitor.server-select section.status-message,
+section.monitor.server-select section.info,
+section.monitor.server-select section.monitor ul.legend,
+section.monitor.server-select section.meters {
+  display: none;  
+}
+
+section.monitor.status-message section.server-select,
+section.monitor.status-message section.info,
+section.monitor.status-message section.monitor ul.legend,
+section.monitor.status-message section.meters {
+  display: none;  
+}
+
+section.monitor.connected section.status-updates,
+section.monitor.connected section.status-message,
+section.monitor.connected section.server-select {
+  display: none;
+}
+
+
+section.monitor.status-updates section.status-message,
+section.monitor.status-updates section.info,
+section.monitor.status-updates ul.legend,
+section.monitor.status-updates section.meters,
+section.monitor.status-updates section.server-select {
+  display: none;
+}
+
+
+section.monitor section.status-updates {
+  position: absolute;
+  
+  top: 50%;
+  right: 0;
+  height: 40px;
+  left: 0;
+  
+  padding: 20px;
+  
+  margin-top: -20px;
+  
+  color: #eee;  
+  
+  text-align: center;
+}
+
+section.monitor section.server-select {
+  position: absolute;
+  
+  top: 50%;
+  right: 0;
+  height: 200px;
+  left: 0;
+  
+  padding: 20px;
+  
+  margin-top: -100px;
+  
+}
+
+section.monitor section.server-select h2 {
+  font-size: 0.8em;
+  color: #ccc;
+  text-align: center;
+}
+
+section.monitor section.server-select input {
+  
+  width: 100%;
+  
+  margin-bottom: 10px;
+
+}
+
+section.monitor section.server-select button {
+  
+  position: relative;
+  
+  width: 60%;
+  
+  margin-left: 20%;
+
+}
+
+section.monitor.odd {
+  border-bottom: 2px solid black;  
+}
+
+section.monitor.mid {
+  border-right: 2px solid black;  
+}
+
+section.monitor section.info {
+  position: absolute;
+  
+  top: 0px;
+  right: 4px;
+  height: 60px;
+  left: 4px;
+  
+/*  border-bottom: 2px solid black;*/
+  border-bottom: 1px solid rgba(0,0,0, 0.4);
+  
+}
+
+section.monitor section.info h1 {
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: normal;
+  
+  color: #eee;
+  
+  text-shadow: 1px 1px rgba(0,0,0,0.7);
+}
+
+section.monitor section.info h1 span {
+  display: block;
+  font-size: 0.6em;
+  
+  color: #999;
+
+  text-shadow: -1px -1px rgba(0,0,0,0.7);
+}
+
+section.monitor section.info span.update-interval {
+  position: absolute;
+  
+  top: 6px;
+  right: 3px;
+  
+  color: #fff;
+  
+  font-size: 0.6em;
+}
+
+section.monitor section.info  ul {
+  float: left;
+  margin: 0;
+  width: 50%;
+  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  font-size: 0.7em;
+  
+  color: #aaa;
+}
+
+section.monitor section.info  ul li {
+  padding-left: 6px;
+}
+
+section.monitor section.info  ul li span {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  color: #777;
+/*  text-shadow: 1px 1px rgba(255,255,255,0.1);*/
+  text-shadow: 1px 1px rgba(0,0,0,0.4);
+}
+
+section.monitor section.meters {
+  position: absolute;
+
+  top: 61px;
+  right: 4px;
+  bottom: 40px;
+  left: 4px;
+}
+
+section.monitor section.meters canvas {
+  
+  display: block;
+    
+  height: 25%;
+  width: 100%;
+  
+  border-top: 1px solid rgba(255,255,255, 0.1);
+  border-bottom: 1px solid rgba(0,0,0, 0.4);
+  
+/*  margin-bottom: 0.2%;*/
+}
+
+section.monitor section.meters ul {
+  
+  list-style: none;
+  
+  height: 10%;
+  width: 100%;
+
+  color: #444;
+  font-size: 0.7em;
+  
+  margin: 0;
+  padding: 0;
+  
+  vertical-align: middle;
+    
+  border-top: 1px solid rgba(255,255,255, 0.1);
+  
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.1)), to(rgba(0,0,0,0.0)));
+  
+}
+
+section.monitor section.meters li {
+  float: left;
+  padding: 6px;
+  margin-right: 12px;
+}
+
+section.monitor section.meters li span {
+  color: #999;
+  
+}
+
+section.monitor ul.legend {
+  
+  position: absolute;
+
+  list-style: none;
+  
+  overflow: hidden;
+  
+  height: 33px;
+  right: 4px;
+  bottom: 0;
+  left: 4px;
+  
+  padding: 0 0 0 0;
+  margin: 0;
+  
+  border-top: 1px solid rgba(255,255,255, 0.1);
+}
+
+section.monitor ul.legend li:first-child {
+  margin-left: 12px;
+}
+
+section.monitor ul.legend li {
+  float: left;
+  margin-top: 12px;
+  margin-right: 16px;
+  
+  text-shadow: 1px 1px #444;
+
+  font-size: 0.8em;
+  
+  color: #000;
+}
+
+section.monitor ul.legend li span {
+  display: inline-block;
+ 
+  height: 10px;
+  width: 10px;
+
+  margin-right: 6px;
+  
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+section.monitor ul.legend li span.red {
+  background: rgb(244, 52, 0);
+}
+
+section.monitor ul.legend li span.green {
+  background: rgb(166, 219, 0);
+}
+
+section.monitor ul.legend li span.pink {
+  background: rgb(230, 21, 90);
+}
+
+section.monitor ul.legend li span.purple {
+  background: rgb(172, 48, 224);
+}
+
+section.monitor ul.legend li span.blue {
+  background: rgb(51, 182, 255);
+}
+
+section.monitor ul.legend li span.orange {
+  background: rgb(255, 176, 0);
+}
+
+section.monitor ul.legend li span.yellow {
+  background: rgb(255, 215, 0);
+}
+
+section.monitor ul.legend li span.dgreen {
+  background: rgb(199, 244, 136);
+}
+
+
+section.monitor ul.series-menu {
+  display: none;
+
+  position: absolute;
+  
+  list-style: none;
+  
+  border-top: 4px solid rgba(0,0,0,0.8);
+  border-bottom: 4px solid rgba(0,0,0,0.8);
+  
+  background: rgba(0,0,0,0.8);
+  
+  color: #fff;
+  
+  padding: 0;
+  margin: 0;
+  
+  width: 250px;
+}
+
+section.monitor ul.series-menu li {
+  font-size: 0.8em;
+  
+  padding: 3px 0 3px 12px;
+}
+
+section.monitor ul.series-menu li.over {
+  
+  background: rgba(255,255,255, 1);
+  
+  color: #000;
+}
+
+footer {
+  position: absolute;
+  
+  height: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+
+footer * {
+  margin-top: 12px;
+}
+
+footer button {
+  margin-left: 20px;
+}
+
+footer span {
+  
+  position: absolute;
+  right: 0;
+}
+

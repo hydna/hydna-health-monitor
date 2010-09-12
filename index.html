@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="Content-Type" content="text/html; charset=Utf-8">
+    <title>Hydna Health Monitor</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title">
+  </head>
+  <body>
+    <header>
+      
+    </header>
+    <content>
+    </content>
+    <footer>
+      <button>Add server</button>
+      <span>Powered by Hydna</span>
+    </footer>
+    
+    <section class="monitor tmpl server-select">
+      <section class="server-select">
+        <h2>Connect to server</h2>
+        <input type="search" placeholder="Enter second part of server addr" value="">
+        <button>Connect</button>
+      </section>
+      <section class="status-message">Connecting to stream</section>
+      <section class="status-updates">Connected, waiting for status updates...</section>
+      <section class="info">
+        <h1></h1>
+        <span class="update-interval"></span>
+        <!-- <div>
+          <ul>
+            <li class="hostname">Hostname<span>-</span></li>
+            <li class="currconns">Curr conns<span>-</span></li>
+            <li class="currmsgs">Curr msgs(sec)<span>-</span></li>
+          </ul>
+          <ul>
+            <li class="uptime">Uptime<span>-</span></li>
+            <li class="peekconns">Peek conns<span>-</span></li>
+            <li class="peekmsgs">Peek msgs(sec)<span>-</span></li>
+          </ul>
+        </div> -->
+      </section>
+      <section class="meters">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+      </section>
+      <ul class="legend">
+      </ul>
+    </section>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/smoothie.js"></script>
+    <script src="http://ws.hydna.net/"></script>
+  </body>
+</html>

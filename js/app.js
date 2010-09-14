@@ -195,7 +195,7 @@ $(document).ready(function() {
       $(".stat-indicator", pane).removeClass("wait");
       setTimeout(function() {
         $(".stat-indicator", pane).addClass("wait");
-      }, 1500);
+      }, timeBetweenUpdates / 2);
     }
     
     pane.data("lastUpdate", now);
